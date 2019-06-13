@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <link rel = "stylesheet" href = "home.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <head class = "centerize">
+        <title> Ramki Pitchala</title>
+        <div id = "top">
+                <h1 id = "">Ramki Pitchala Portfolio</h1>
+        </div>
+
+        <ul class = "nav" id = "menu">
+            <li> <a href = "projects">Projects</a></li>
+            <li> <a href = "about">About</a></li>
+            <li> <a href = "skills">Skills</a></li>
+        </ul>
+    </head>
+    <body>
+        <div id= "about_me">
+            <section>
+                <p>
+                My name is Ramki
+                </p>
+            </section>
+        </div>
+        <div id ="SKILLS">
+            <h3> Skills </h3>
+                    <div class = "skills">
+                                <h3>
+                                Languages & Syntax
+                                </h3> 
+                                <ul>
+                                    <li>Java</li>
+                                    <li>Python</li>
+                                    <li>HTML5</li>
+                                    <li>GNU Octave</li>
+                                    <li>CSS</li>
+                                </ul>       
+                    </div>
+                    <div class = "skills">
+                            <h3>
+                            Technologies & Modules
+                            </h3>
+                            <ul>
+                                <li>MongoDB</li>
+                                <li>Numpy</li>
+                                <li>Kivy</li>
+                                <li>Selenium</li>
+                            </ul>
+                    </div>                
+        </div>
+        <style>             
+                .Objectives li{
+                    padding: 10px;
+                }
+                    
+                </style>
+        <div class = "container">
+            <div class = "Project">
+                <h3 style = "text-align: center"> Connect 4 </h3>
+                    <div id = "Connect-4" class = 'Project-Layout'>
+                        <div class = 'project-image'>
+                                <img src= 'images/connect4.png'>
+                                <button style = "border:0px; background-color: transparent"id = 'connect-4' >
+                                    <img src = "images/github.png"> 
+                                </button>
+                        </div>
+                        <div>
+                            <ul class = "Objectives">
+                                Learned Objectives
+                                <li>
+                                    Threading & Thread Communication with wait() and notify()
+                                </li>
+                                <li>
+                                    Storing Data with MongoDB
+                                </li>
+                                <li>
+                                    Object Oriented Programming
+                                </li>
+                                <li>
+                                    Basics of TCP Client & Server relationship
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <article>
+                        A Connect 4 game built on Java and Swing with User Authentication system using MongoDB, a way to retrieve 
+                        old games, as well as a client & server model used to pit computers against each other
+                    </article>
+            </div>
+            <div class = "Project"> 
+                <h3 style = "text-align: center"> Number Recognizer </h3>
+                    <div id = "Number Recognizer" class = "Project-Layout">
+                        <div class = "project-image">
+                            <img src = 'images/number.png'>
+                            <button style = "border:0px; background-color: transparent" id = 'number-recognizer'> 
+                                <img src = "images/github.png"> 
+                            </button>
+                        </div>
+                        <div>
+                            <ul class = "Objectives">
+                                Learned Objectives
+                                <li>
+                                    Processing Image Data with OpenCV
+                                </li>
+                                <li>
+                                    Manipulating Matricies with Numpy
+                                </li>
+                                <li>
+                                    Organizing Training, Cross Validation, and Testing Data
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <article>
+                            A number recognizing neural network built on Python. I took 15000+ images of digits from github and organized them
+                            into folders, and from those folders I trained and tested a simple 3 layered Neural Network.
+                        </article> 
+                            
+            </div>
+            <script>
+                let connect_4 = document.getElementById('connect-4');
+                let number_recognizer = document.getElementById('number-recognizer');
+
+                connect_4.addEventListener('click', function(){
+                    window.open('https://github.com/Ramko9999/Connect-4')
+                })
+                number_recognizer.addEventListener('click', function(){
+                    window.open('https://github.com/Ramko9999/Number-Recognition')
+                })
+            
+            </script>
+    
+        </div>
+        
+    </body>
+
+</html>

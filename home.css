@@ -1,0 +1,72 @@
+h1{
+    text-size-adjust: 40px;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FFFFFF;
+    font-size: 30;
+    font: 'monospace';
+}
+
+body{
+    font-family: 'Montserrant';
+    background-color: darkslategray;
+    color: white;
+}
+#top{
+    background-image: url("images/code.png");
+    filter: grayscale(50);
+    padding: 200px;
+}
+
+.nav{
+    background-color: #444444;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav li{
+    display: inline;
+
+}
+.nav li a{
+    font-size: 20px;
+    color: grey;
+    text-decoration-line: none;
+    padding: 15px;
+}
+.nav li a:hover{
+    color:white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    align-content: center;
+}
+
+.Project {
+    text-align: center;
+    border: 5px solid darkgray;
+    float: left;  
+    font-family: 'Montserrat';
+}
+
+.Project h3{
+    font-family: 'Montserrat';
+    font-size: 36px;
+}
+
+.Project-Layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+#SKILLS{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px
+}
