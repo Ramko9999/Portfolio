@@ -10,33 +10,38 @@ h1{
 
 body{
     font-family: 'Montserrant';
-    background-color: darkslategray;
+    background-color: #444444;
     color: white;
 }
 #top{
     background-image: url("images/code.png");
-    filter: grayscale(50);
-    padding: 200px;
+    height: 840px;
+    width: 1450px;
+    filter: sepia(50)
 }
 
 .nav{
-    background-color: #444444;
+    background-color: #222222;
     text-align: center;
     padding: 20px;
+    border: 2px, lightgreen;
+    align-items: center;
 }
 
 .nav li{
-    display: inline;
+    display: inline-block;
+    
 
 }
 .nav li a{
     font-size: 20px;
+    font-family: "Montserrat";
     color: grey;
     text-decoration-line: none;
     padding: 15px;
 }
 .nav li a:hover{
-    color:white;
+    color:lightgreen;
 }
 
 .container{
@@ -67,6 +72,24 @@ body{
 
 #SKILLS{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 100px;
+    grid-gap: 20px;
+
+}
+
+.skills{
+    background-color: white;
+    color: #000000;
+    border: 1px gray; 
+
+}
+button:hover{
+    cursor: pointer;
+
+}
+
+.center{
+    text-align: center;
 }
