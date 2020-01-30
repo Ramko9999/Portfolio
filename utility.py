@@ -1,13 +1,6 @@
 import cv2, numpy as np
 import os
 
-
-direc = "C:\Users\ramap\OneDrive\Desktop\Clients\Joyful African Foods\Images"
-os.chdir(direc)
-print(os.getcwd())
-
-
-
 #replaces a previous image with a resized image if wanted
 def resize(image_name, direc, newDim:tuple, final_name):
     os.chdir(direc)
