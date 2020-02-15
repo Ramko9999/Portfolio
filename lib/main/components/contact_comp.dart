@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:core';
-
+import 'package:universal_html/html.dart' as html;
 import "package:flutter/material.dart";
 import 'package:http/http.dart';
 import 'package:portfolio/util/config.dart';
@@ -18,7 +18,7 @@ class _ContactComponentState extends State<ContactComponent> {
     return SingleChildScrollView(
       child: Container(
         width: sW,
-        height: sH * 0.9,
+        height: sH * 0.80,
         color: Colors.blue,
         child: Padding(
           padding: EdgeInsets.only(top: sH * 0.01),
@@ -51,6 +51,9 @@ class _ContactComponentState extends State<ContactComponent> {
                     child: Text("Let me know how I can help you"),
                   ),
                   Container(
+                    height: sH * 0.1,
+                  ),
+                  Container(
                     child: ContactFlow(),
                   )
                 ],
@@ -71,6 +74,7 @@ class ContactFlow extends StatefulWidget {
 class _ContactFlowState extends State<ContactFlow> {
   Map<String, String> data = {"FROM": "", "SUBJECT": "", "BODY": ""};
   List<String> processes = ["FROM", "SUBJECT", "BODY", "FINISH"];
+  final appContainer = html.window.document.getElementById("app-container");
 
   int flowPhase = 0;
 
@@ -107,12 +111,21 @@ class _ContactFlowState extends State<ContactFlow> {
           child: Container(
             width: sW * 0.1,
             height: sH * 0.1,
-            child: TextField(
-                controller: subjectController,
-                decoration: InputDecoration(labelText: "Enter Subject"),
-                onSubmitted: (String s) {
-                  data["SUBJECT"] = s;
-                }),
+            child: MouseRegion(
+              onHover: (var p) {
+                appContainer.style.cursor = "Text";
+              },
+              onExit: (var p) {
+                appContainer.style.cursor = 'default';
+              },
+              child: TextField(
+                  style: TextStyle(fontFamily: "Montserrat", fontSize: 12),
+                  controller: subjectController,
+                  decoration: InputDecoration(labelText: "Enter Subject"),
+                  onSubmitted: (String s) {
+                    data["SUBJECT"] = s;
+                  }),
+            ),
           )),
     );
   }
@@ -129,12 +142,24 @@ class _ContactFlowState extends State<ContactFlow> {
           child: Container(
             width: sW * 0.1,
             height: sH * 0.1,
-            child: TextFormField(
-                controller: fromController,
-                decoration: InputDecoration(labelText: "Enter Email Address"),
-                onFieldSubmitted: (String s) {
-                  data["FROM"] = s.trim();
-                }),
+            child: MouseRegion(
+              onHover: (var p) {
+                appContainer.style.cursor = "Text";
+              },
+              onExit: (var p) {
+                appContainer.style.cursor = 'default';
+              },
+              child: TextFormField(
+                  style: TextStyle(
+                    fontFamily: "Montserrat",
+                    fontSize: 12,
+                  ),
+                  controller: fromController,
+                  decoration: InputDecoration(labelText: "Enter Email Address"),
+                  onFieldSubmitted: (String s) {
+                    data["FROM"] = s.trim();
+                  }),
+            ),
           )),
     );
   }
@@ -151,32 +176,40 @@ class _ContactFlowState extends State<ContactFlow> {
           child: Container(
             width: sW * 0.1,
             height: sH * 0.2,
-            child: TextFormField(
-                keyboardType: TextInputType.text,
-                maxLines: null,
-                style: TextStyle(
-                  fontFamily: 'Lato',
-                  fontSize: 14,
-                ),
-                controller: bodyController,
-                decoration: InputDecoration(labelText: "Enter Message"),
-                onFieldSubmitted: (String s) {
-                  setState(() => data["BODY"] = s.trim());
-                }),
+            child: MouseRegion(
+              onHover: (var p) {
+                appContainer.style.cursor = "Text";
+              },
+              onExit: (var p) {
+                appContainer.style.cursor = 'default';
+              },
+              child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  maxLines: null,
+                  style: TextStyle(fontFamily: "Montserrat", fontSize: 12),
+                  controller: bodyController,
+                  decoration: InputDecoration(labelText: "Enter Message"),
+                  onFieldSubmitted: (String s) {
+                    setState(() => data["BODY"] = s.trim());
+                  }),
+            ),
           )),
     );
   }
 
   Future<String> sendEmail(Map data) async {
-
     Client httpClient = Client();
-    
+    final mailResponse =
+        await httpClient.get(ServiceApi.getHomeUrl(), headers: {});
+
+    /*
     final mailResponse = await httpClient.post(HerokuApi.getEmailUrl(), 
       body: json.encode(data), headers: {
       "Accept": "application/json",
       "Content-Type": "application/x-www-form-urlencoded"
     }
     );
+    */
 
     print(mailResponse.body);
     return mailResponse.body;
@@ -189,7 +222,6 @@ class _ContactFlowState extends State<ContactFlow> {
       future: sendEmail(data),
       builder: (BuildContext context, var snapshot) {
         if (snapshot.hasData) {
-
           Map respData = json.decode(snapshot.data);
           if (!respData["error"]) {
             //if there is not error with response from backend
