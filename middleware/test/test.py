@@ -10,8 +10,12 @@ def test_send_mail():
         "BODY": "this is a python test",
         "FROM": "64000340@ep-student.org",
     }
-    url = "http://127.0.0.1:5000/send-mail"
+    url = "https://ramapitchala.pythonanywhere.com/send-mail"
     print(requests.post(url, encoder.encode(mail_request)).json())
 
+def test_home():
+    url = "https://ramapitchala.pythonanywhere.com"
+    response = requests.get(url)
+    print(response.json())
 
-test_send_mail()
+test_home()

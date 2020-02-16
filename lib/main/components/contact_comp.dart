@@ -18,7 +18,7 @@ class _ContactComponentState extends State<ContactComponent> {
     return SingleChildScrollView(
       child: Container(
         width: sW,
-        height: sH * 0.80,
+        height: sH * 0.9,
         color: Colors.blue,
         child: Padding(
           padding: EdgeInsets.only(top: sH * 0.01),
@@ -197,23 +197,16 @@ class _ContactFlowState extends State<ContactFlow> {
     );
   }
 
+  
   Future<String> sendEmail(Map data) async {
-    Client httpClient = Client();
-    final mailResponse =
-        await httpClient.get(ServiceApi.getHomeUrl(), headers: {});
-
-    /*
-    final mailResponse = await httpClient.post(HerokuApi.getEmailUrl(), 
+    final mailResponse = await post(ServiceApi.getEmailUrl(), 
       body: json.encode(data), headers: {
       "Accept": "application/json",
       "Content-Type": "application/x-www-form-urlencoded"
-    }
-    );
-    */
-
-    print(mailResponse.body);
+    });
     return mailResponse.body;
   }
+  
 
   Widget getFinishWidget(BuildContext context) {
     double sW = MediaQuery.of(context).size.width;

@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import "package:universal_html/html.dart" as html;
 
 class ProjectComponent extends StatelessWidget {
+  
   Future<List> getRepos() async {
     String endpoint = "https:api.github.com/users/Ramko9999/repos";
     Response userRepoResponse = await get(endpoint);
@@ -74,7 +75,7 @@ class ProjectComponent extends StatelessWidget {
                         height: sH * 0.02,
                       ),
                       Container(
-                        height: sH * 0.78,
+                        height: sH * 0.88,
                         child: SingleChildScrollView(
                             child: buildRepoColumn(context, repos, 2)),
                       ),

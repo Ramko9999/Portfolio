@@ -3,6 +3,7 @@ from config import *
 import json
 from flask_mail import Mail, Message
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
 decoder = json.decoder.JSONDecoder()
@@ -12,6 +13,7 @@ app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = EMAIL_ADDRESS
 app.config["MAIL_PASSWORD"] = PASSWORD
 mail = Mail(app)
+CORS(app)
 
 
 @app.route("/", methods= ["GET"])

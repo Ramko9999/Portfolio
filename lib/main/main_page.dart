@@ -52,6 +52,9 @@ class _MainPageState extends State<MainPage> {
             width: sW,
             child: Row(
               children: <Widget>[
+                Container(
+                  width: sW * 0.05,
+                ),
                 MouseRegion(
                   onHover: (var p) {
                     appContainer.style.cursor = "Pointer";
@@ -69,6 +72,9 @@ class _MainPageState extends State<MainPage> {
                     ),
                     onPressed: () => navigate("PROJECT", context),
                   ),
+                ),
+                Container(
+                  width: sW * 0.05,
                 ),
                 MouseRegion(
                   onHover: (var p) {
@@ -88,17 +94,21 @@ class _MainPageState extends State<MainPage> {
                     onPressed: () => navigate("CONTACT", context),
                   ),
                 ),
-              ],
-            ),
-          ),
-          Container(child: _displayingWidget),
-          Container(
-              height: sH * 0.1,
-              color: Colors.black,
-              width: sW,
-              child: Row(children: <Widget>[
                 Container(
-                  height: sW * 0.5,
+                  width: sW * 0.15,
+                ),
+                Container(
+                  child: Text("Ramki Pitchala", 
+                  style: TextStyle(
+                    fontFamily: "Montserrat",
+                    color: Colors.white,
+                    fontSize: 28
+                  ),),
+                ),
+                Container(
+                  width: sW * 0.2,
+                ),
+                Container(
                   alignment: Alignment.center,
                   child: MouseRegion(
                       onHover: (var p) {
@@ -121,7 +131,6 @@ class _MainPageState extends State<MainPage> {
                           ))),
                 ),
                 Container(
-                  width: sW * 0.5,
                   child: MouseRegion(
                       onHover: (var p) {
                         appContainer.style.cursor = "Pointer";
@@ -143,7 +152,10 @@ class _MainPageState extends State<MainPage> {
                                 fontFamily: "Montserrat", color: Colors.white),
                           ))),
                 ),
-              ]))
+              ],
+            ),
+          ),
+          Container(child: _displayingWidget),
         ],
       ),
     ));
