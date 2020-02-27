@@ -9,4 +9,9 @@ class LanguageScheme{
     }
     return Colors.red;
   }
+
+}
+
+class CursorSchemes{
+  static Color hoverColor = Colors.green;
 }

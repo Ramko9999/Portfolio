@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:portfolio/util/color_scheme.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher.dart';
 import 'components/contact_comp.dart';
@@ -63,6 +64,7 @@ class _MainPageState extends State<MainPage> {
                     appContainer.style.cursor = 'default';
                   },
                   child: FlatButton(
+                    hoverColor: CursorSchemes.hoverColor,
                     child: Text(
                       "Projects",
                       style: TextStyle(
@@ -84,6 +86,7 @@ class _MainPageState extends State<MainPage> {
                     appContainer.style.cursor = 'default';
                   },
                   child: FlatButton(
+                    hoverColor: CursorSchemes.hoverColor,
                     child: Text(
                       "Contact",
                       style: TextStyle(
@@ -98,12 +101,13 @@ class _MainPageState extends State<MainPage> {
                   width: sW * 0.15,
                 ),
                 Container(
-                  child: Text("Ramki Pitchala", 
-                  style: TextStyle(
-                    fontFamily: "Montserrat",
-                    color: Colors.white,
-                    fontSize: 28
-                  ),),
+                  child: Text(
+                    "Ramki Pitchala",
+                    style: TextStyle(
+                        fontFamily: "Montserrat",
+                        color: Colors.white,
+                        fontSize: 28),
+                  ),
                 ),
                 Container(
                   width: sW * 0.2,
@@ -118,6 +122,7 @@ class _MainPageState extends State<MainPage> {
                         appContainer.style.cursor = 'default';
                       },
                       child: FlatButton(
+                          hoverColor: CursorSchemes.hoverColor,
                           onPressed: () async {
                             String url = "https://github.com/Ramko9999";
                             if (await canLaunch(url)) {
@@ -139,6 +144,7 @@ class _MainPageState extends State<MainPage> {
                         appContainer.style.cursor = 'default';
                       },
                       child: FlatButton(
+                          hoverColor: CursorSchemes.hoverColor,
                           onPressed: () async {
                             String url =
                                 "https://www.linkedin.com/in/rama-krishna-pitchala-532a48158/";
