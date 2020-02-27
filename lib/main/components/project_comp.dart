@@ -4,14 +4,13 @@ import "package:flutter/material.dart";
 import 'package:http/http.dart';
 import 'package:portfolio/model/repository.dart';
 import 'package:portfolio/util/color_scheme.dart';
+import 'package:portfolio/util/config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import "package:universal_html/html.dart" as html;
 
 class ProjectComponent extends StatelessWidget {
-  
   Future<List> getRepos() async {
-    String endpoint = "https:api.github.com/users/Ramko9999/repos";
-    Response userRepoResponse = await get(endpoint);
+    Response userRepoResponse = await get(ServiceApi.getReposUrl());
     return [userRepoResponse.body];
   }
 
@@ -59,8 +58,7 @@ class ProjectComponent extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data.length > 0) {
-              List userRepoData = json.decode(snapshot.data[0]);
-
+              List userRepoData = json.decode(snapshot.data[0])["repos"];
               //grab only repos that are ready to be shown
               List<Repository> repos = userRepoData
                   .map((f) => Repository.fromJson(f))
@@ -84,6 +82,13 @@ class ProjectComponent extends StatelessWidget {
             } else {
               return Text("Error");
             }
+          } else if (snapshot.hasError) {
+            Center(
+              child: Text(
+                "Something went wrong... ${snapshot.error.toString()}",
+                style: TextStyle(fontFamily: "Montserrat", fontSize: 45),
+              ),
+            );
           } else {
             return Container(
               height: sH * 0.7,
@@ -97,10 +102,8 @@ class ProjectComponent extends StatelessWidget {
                     Center(
                       child: Text(
                         "Loading...",
-                        style: TextStyle(
-                          fontFamily: "Montserrat",
-                          fontSize: 45
-                        ),
+                        style:
+                            TextStyle(fontFamily: "Montserrat", fontSize: 45),
                       ),
                     ),
                     Center(
