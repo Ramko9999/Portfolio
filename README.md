@@ -1,3 +1,1 @@
-# portfolio
-
-Here is the link to view it: https://ramki-portfolio.firebaseapp.com/#/
+Source code for my portfolio built with React + TypeScript for the Front End and Python Flask for the Backend. 
