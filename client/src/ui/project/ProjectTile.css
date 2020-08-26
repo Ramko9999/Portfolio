@@ -1,0 +1,11 @@
+.text{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 40%; /* Adjust this value to move the positioned div up and down */
+    color: #fff;
+    width: 60%; /* Set the width of the positioned div */
+}

@@ -1,0 +1,39 @@
+{
+  "name": "react-portfolio-ts",
+  "version": "1.0.0",
+  "description": "My portfolio showcasing my projects built with React + TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "npm test"
+  },
+  "author": "Ramki Pitchala",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.9.46",
+    "@types/react-router-dom": "^5.1.5",
+    "antd": "^4.5.4",
+    "history": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "typescript": "^4.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
