@@ -1,28 +1,27 @@
 import React from "react";
 import {useSpring, animated} from "react-spring";
 import {Row, Col} from "antd";
-import Link from "../util/Link";
+import NavLink from "../util/NavLink";
+import ScrollLink from "../util/ScrollLink";
 
 
 const HomeView = ()=>{
     const animationProps = useSpring({
         opacity: 1,
-        marginTop: 0,
         from: {
             opacity: 0,
-            marginTop: -500
         }
     });
 
-
     return (
+        <div style={{
+            margin: "auto",
+            width: "80%",
+            minWidth: "200px",
+            textAlign: "center"
+        }}>
         <animated.div style={animationProps}>
-            <div style={{
-                margin: "auto",
-                width: "80%",
-                minWidth: "200px",
-                textAlign: "center"
-            }}>
+            <div>
                <div style={
                    {
                        color:"black",
@@ -46,16 +45,28 @@ const HomeView = ()=>{
                    }
                }>
                    <Row justify="center">
-                     <Col span={4}>
-                        <Link url="https://github.com/Ramko9999" name="Ramko9999" icon="github"/> 
+                     <Col span={2}>
+                        <NavLink url="https://github.com/Ramko9999" name="Github">
+                        </NavLink> 
+                     </Col> 
+                     <Col span={2}>
+                        <NavLink url="https://medium.com/@ramapitchala" name="Medium">
+                        </NavLink>
                      </Col>
-                     <Col span={4}>
-                        <Link url="https://medium.com" name="Ramki Pitchala" icon="medium"/>
+                     <Col span={2}>
+                        <NavLink url="https://www.linkedin.com/in/rama-krishna-pitchala/" name="Linkedin">
+                        </NavLink>
+                     </Col>
+                     <Col span={2}>
+                         <NavLink url="mailto:pitch034@umn.edu" name="Email">
+                         </NavLink>
                      </Col>
                    </Row>
                </div>
             </div>
         </animated.div>
+        <ScrollLink target="experience-view" text="Go To Experience"/>
+        </div>
     )
 }
 

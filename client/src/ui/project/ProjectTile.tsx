@@ -66,7 +66,7 @@ const ProjectContent = (data: Project) => {
       <Row justify="center">
         {images.map((image) => {
           return (
-            <img style={{
+            <img key={image} style={{
               minWidth: "225px"
             }} width={`${Math.floor(100 / images.length)}%`} src={image} alt="" />
           );

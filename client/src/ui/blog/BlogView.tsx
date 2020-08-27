@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Blog} from "../../interfaces/Blog";
-import Loader from "../util/Loader";
+import Loader from "../util/ScrollLink";
 import BlogApi from "../../api/Blog";
 
 const BlogView = () => {
@@ -21,14 +21,7 @@ const BlogView = () => {
 
 
     if(loading || data === null){
-        return (
-        <div style={
-            {
-                alignContent: "center"
-            }
-        }>
-            <Loader/>
-        </div>);
+        return null;
     }
     return <div> Blogs </div>;
 }

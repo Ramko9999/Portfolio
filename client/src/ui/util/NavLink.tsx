@@ -5,17 +5,18 @@ import "../Main.css";
 type Props = {
     url: string,
     name: string
-    icon: string,
+    children: React.ReactNode,
 }
-const Link = (props:Props) => {
-    const {url, name, icon} = props;
+const NavLink = (props:Props) => {
+    const {url, name, children} = props;
 
     return (
     <div className="clickable" onClick={()=> {
         window.open(url);
      }}>
+         {children}
          {name}
     </div>)
 }
 
-export default Link;
+export default NavLink;

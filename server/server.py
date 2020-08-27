@@ -18,17 +18,16 @@ app.config["MAIL_PASSWORD"] = PASSWORD
 mail = Mail(app)
 CORS(app)
 
-@app.route("/send-mail", methods= ["POST"])
-def sendEmail():
-    jsonObj = decoder.decode(str(request.get_data(), encoding='UTF-8'))
-    subject = f"Website: {jsonObj['SUBJECT']}"
-    body = f"From: {jsonObj['FROM']} \n\n {jsonObj['BODY']}"
-    message = Message(subject=subject, recipients=[DESTINATION_EMAIL_ADDRESS], body=body, sender=EMAIL_ADDRESS)
+experience = {}
+with open("experience.json", 'r') as f:
+    experience = json.load(f)
+
+@app.route("/exp", methods=["GET"])
+def getExp():
     try:
-        mail.send(message)
-        return {"message": 'sent', "error": False}, 200
+        return {"error": False, "experience": experience}, 200
     except Exception as e:
-        return {"message": str(e), "error": True}, 404
+        return {"error":True, "message": str(e)}, 500
 
 
 @app.route("/blogs", methods= ["GET"])
@@ -53,8 +52,7 @@ def getBlogs():
 
         return {"blogs": blogs, "error": False}, 200
     except Exception as e:
-        print(str(e))
-        return {"error": True, "message": str(e)}, 400
+        return {"error": True, "message": str(e)}, 500
 
 
 @app.route("/projects", methods=["GET"])
@@ -80,7 +78,7 @@ def getRepos():
                 projects.append(project)
         return {"projects": projects, "error": False}
     except Exception as e:
-        return {"error": True, "message": str(e)}, 400
+        return {"error": True, "message": str(e)}, 500
 
 if __name__ == "__main__":
     app.run()
