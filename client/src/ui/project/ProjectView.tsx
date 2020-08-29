@@ -3,7 +3,6 @@ import ProjectApi from "../../api/Project";
 import { Project } from "../../interfaces/Project";
 import ProjectTile from "./ProjectTile";
 import {List} from "antd";
-import ScrollLink from "../util/ScrollLink";
 
 
 
@@ -46,7 +45,11 @@ const ProjectView = () => {
         }>
             Projects
         </div>
-        <div>
+        <div style ={
+            {
+                marginTop: "5%"
+            }
+        }>
             <List
                 grid={{
                     gutter: 16,

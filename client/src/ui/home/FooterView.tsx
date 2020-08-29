@@ -31,6 +31,7 @@ const FooterView = () => {
             </span>
             <div style = {
                 {
+                    marginTop: "2%",
                     justifyContent: "space-between"
                 }
             }>
@@ -39,15 +40,15 @@ const FooterView = () => {
                         display: "inline-block"
                     }
                 }>
-                    Thank you for visiting my site. Please feel free to with me connect on
+                    Thank you for visiting my site. Please feel free to connect with me on
             </div>
                 <div className="clickable" style={
                     {
                         textDecoration: "underline",
                         display: "inline-block",
                         paddingLeft: "9px"
-                    }
-                }>
+                    } 
+                } onClick={()=> {window.open("https://www.linkedin.com/in/rama-krishna-pitchala/")}}>
                     {`   ${contacts.linkedin}`}
                 </div>
 

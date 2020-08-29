@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import {Blog} from "../../interfaces/Blog";
-import Loader from "../util/ScrollLink";
 import BlogApi from "../../api/Blog";
 
 const BlogView = () => {

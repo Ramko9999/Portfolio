@@ -35,6 +35,7 @@ const ProjectHeader = (data: Project) => {
             className="clickable" style={{
               color: "black",
               textDecoration: "underline",
+              fontSize: "80%"
             }}>
               {name}
             </span>
@@ -128,7 +129,7 @@ const ProjectTile = (data: Project) => {
     <animated.div style={animationProps}>
     <div style={{ padding: "5%" }}>
       <Card
-        style={{ width: "100%", minWidth: "500px" }}
+        style={{ width: "100%", minWidth: "200px" }}
         size={"small"}
         title={<ProjectHeader {...data} />}
         bodyStyle={{ paddingBottom: 0 }}

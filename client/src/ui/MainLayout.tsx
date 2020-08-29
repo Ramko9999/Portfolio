@@ -1,14 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import ProjectView from "./project/ProjectView";
 import ExperienceView from "./experience/ExperienceView";
-import { Layout } from "antd";
 import HomeView from "./home/HomeView";
 import FooterView from "./home/FooterView";
-
-
-
-const { Content } = Layout;
-
 
 const MainLayout = () => {
 
@@ -38,7 +32,7 @@ const MainLayout = () => {
         </div>
         <div style={
           {
-            marginTop: "15%"
+            marginTop: "15=0%"
           }
         }>
           <FooterView />
