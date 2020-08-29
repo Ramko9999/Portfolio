@@ -5,9 +5,9 @@
   "position": "Solutions Architect Intern",
   "from": "Jul. 2020",
   "to": "Sept. 2020",
-  "background": "",
+  "background": "TigerGraph is a graph database as a service company. My role mainly involved creating graph queries, graph schema, loading jobs for data, and debugging customer issues.",
   "points": [
-    "Enhanced TigerGraph’s graph algorithm library to support schema-less queries and wrote nearly 12 unit tests for each algorithm.",
+    "Enhanced TigerGraph\\’\\s graph algorithm library to support schema-less queries and wrote nearly 12 unit tests for each algorithm.",
     "Wrote efficient graph queries that extracted insights in millions of vertices and edges in under 400 milliseconds.",
     "Designed robust graph database schema for rapid indexing on vertices and for fast query performance for Fortune 500 clients."
   ]
@@ -18,7 +18,7 @@
     "position": "Software Engineering Intern",
     "from": "Aug. 2019",
     "to": "Jul. 2020",
-    "background": "",
+    "background": "I created a platform called OrgX which essentially connects Users, Projects, Events and Organizations together seamlessly  with a Graph Database backend. I worked in a team of three with a Project Member and another engineer.",
     "points": [
       "Built a web application to allow seamless collaboration on an organizational level with React.js, Node.js, Firestore and TigerGraph in 6 months as a full stack intern.",
      "Architected a scalable messaging system using Firestore and its real time data snapshot listeners.",

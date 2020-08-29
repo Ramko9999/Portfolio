@@ -1,5 +1,4 @@
 import React from "react";
-import {GithubOutlined} from "@ant-design/icons";
 import "../Main.css";
 
 type Props = {

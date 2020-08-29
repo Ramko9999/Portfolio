@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Experience } from "../../interfaces/Experience";
 import ExperienceApi from "../../api/Experience";
 import ExperienceTile from "./ExperienceTile";
+import ScrollLink from "../util/ScrollLink";
 
 
 const ExperienceView = () => {
@@ -47,10 +48,11 @@ const ExperienceView = () => {
                 marginTop: "5%",
                 width: "auto",
             }}>
-                {data.map((exp: Experience)=> {
-                    return (<ExperienceTile experience={exp}/>)
+                {data.map((exp: Experience, index)=> {
+                    return (<ExperienceTile key={index} experience={exp}/>)
                 })}
             </div>
+            <ScrollLink target="project-view" text="Go To Projects"/>
         </div>
     )
 }

@@ -6,7 +6,11 @@ import Layout from "./ui/MainLayout";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style = {
+      {
+        backgroundColor: "#dae5ed"
+      }
+    }>
       <Router history={history}>
         <Switch>
             <Route path="/" component={Layout}></Route>

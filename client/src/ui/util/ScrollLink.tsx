@@ -33,8 +33,10 @@ const ScrollLink = (props: Props) => {
           smooth={true}
           duration={500}
         >
-          {text}
-             </Link>
+          <span style={{color: "#f06"}}>
+            {text}
+          </span>
+        </Link>
       </div>
     </animated.div>
   )

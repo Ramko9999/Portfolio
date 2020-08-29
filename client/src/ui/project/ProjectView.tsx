@@ -62,7 +62,6 @@ const ProjectView = () => {
                 )}
             />
         </div>
-        <ScrollLink target="blog-view" text="Go To Blogs"/>
     </div>);
 }
 
