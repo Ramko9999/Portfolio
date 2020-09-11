@@ -22,7 +22,8 @@ experience = [
   "points": [
     "Enhanced TigerGraph's graph algorithm library to support schema-less queries and wrote nearly 12 unit tests for each algorithm.",
     "Wrote efficient graph queries that extracted insights in millions of vertices and edges in under 400 milliseconds.",
-    "Designed robust graph database schema for rapid indexing on vertices and for fast query performance for Fortune 500 clients."
+    "Designed robust graph database schema for rapid indexing on vertices and for fast query performance for Fortune 500 clients.",
+    "Worked on building graph database use cases such as customer tracking, and entity resolution for client pocs."
   ]
   },
   {
@@ -78,20 +79,17 @@ def getRepos():
     try:
         url = "https://api.github.com/users/Ramko9999/repos"
         headers = {"Accept":"application/vnd.github.mercy-preview+json"}
-        response = requests.get(url, headers=headers, auth=(USERNAME,PASSWORD)).json()
+        repos = requests.get(url, headers=headers, auth=(USERNAME,TOKEN)).json()
         projects = []
-        for repo in response:
-            imageString = ""
+        for repo in repos:
             if repo["homepage"]:
-                imageString = repo["homepage"]
-            if imageString != "":
                 project = {
                     "id": repo["id"],
                     "name": repo["name"],
                     "url": repo["html_url"],
                     "description": repo["description"],
                     "topics":repo["topics"],
-                    "images": imageString.split(";")
+                    "images": repo["homepage"].split(";")
                 }
                 projects.append(project)
         return {"projects": projects, "error": False}

@@ -2,5 +2,5 @@ config.py
 test.py
 venv/
 test/
-/_pycache_
+__pycache__/
 /.idea
