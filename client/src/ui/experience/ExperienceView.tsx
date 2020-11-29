@@ -1,29 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Experience } from "../../interfaces/Experience";
-import ExperienceApi from "../../api/Experience";
 import ExperienceTile from "./ExperienceTile";
 import ScrollLink from "../util/ScrollLink";
 
 
-const ExperienceView = () => {
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState<Experience[] | null>(null);
-    const [error, setError] = useState(false);
-
-    useEffect(()=>{
-        ExperienceApi.getExperiences().then((dat)=>{
-            setData(dat["experience"]);
-        }).catch((error)=>{
-            setError(true);
-        }).finally(()=>{
-            setLoading(false);
-        })
-    }, []);
-
-    if(loading || data === null){
-        return null;
-    }
-
+type Props = {
+    experiences: Experience[]
+}
+const ExperienceView = ({experiences}: Props) => {
+ 
     return (
         <div style={
             {
@@ -48,7 +33,7 @@ const ExperienceView = () => {
                 marginTop: "5%",
                 width: "auto",
             }}>
-                {data.map((exp: Experience, index)=> {
+                {experiences.map((exp: Experience, index)=> {
                     return (<ExperienceTile key={index} experience={exp}/>)
                 })}
             </div>

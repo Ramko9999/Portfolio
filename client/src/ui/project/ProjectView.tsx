@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from "react";
-import ProjectApi from "../../api/Project";
+import React from "react";
 import { Project } from "../../interfaces/Project";
 import ProjectTile from "./ProjectTile";
 import {List} from "antd";
 
 
-
-const ProjectView = () => {
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const [data, setData] = useState<Project[] | null>(null);
-
-    useEffect(() => {
-        ProjectApi.getProjects().then((dat) => {
-            setData(dat["projects"])
-            setLoading(false)
-        }).catch((error) => {
-            setError(true);
-            setLoading(false);
-        });
-    }, []);
+type Props = {
+    projects: Project[]
+}
 
 
-    if (loading || data === null) {
-        return null;
-    }
+const ProjectView = ({projects}:Props) => {
 
     return (
     
@@ -57,7 +42,7 @@ const ProjectView = () => {
                 }}
                 itemLayout="vertical"
                 size="large"
-                dataSource={data}
+                dataSource={projects}
                 renderItem={(data, index) => (
                     <ProjectTile
                         {...data}

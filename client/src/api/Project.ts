@@ -11,7 +11,7 @@ class ProjectApi{
                 throw Error("Failed to get projects")
             }
             let json = await response.json();
-            return json;
+            return json.projects;
         }
         catch(error){
             throw Error(error.message);

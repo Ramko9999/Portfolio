@@ -12,18 +12,29 @@ decoder = json.decoder.JSONDecoder()
 CORS(app)
 
 experience = [
+  { 
+  "company": "MoneyVerbs",
+  "logo": "https://media1-production-mightynetworks.imgix.net/asset/16647518/MV_Logo_Mark_1.png?ixlib=rails-0.3.0&auto=format&w=256&h=256&fit=crop",
+  "position": "Software Engineering Intern",
+  "from": "Jan. 2021",
+  "to": "May. 2021",
+  "background": "MoneyVerbs is a financial wellness startup. I will be an incoming intern this coming spring. I will primarily work on further developing the NodeJS + MongoDB backend and the MoneyVerbs mobile app.",
+  "points": [
+      "Will fill this out once I do some cool stuff at MoneyVerbs"
+  ]
+  },
   {
   "company": "TigerGraph",
-    "logo": "https://www.tigergraph.com/wp-content/uploads/2017/09/cropped-icon-512-1.png",
-  "position": "Solutions Architect Intern",
+  "logo": "https://www.tigergraph.com/wp-content/uploads/2017/09/cropped-icon-512-1.png",
+  "position": "Solutions Engineering Intern",
   "from": "Jul. 2020",
   "to": "Sept. 2020",
   "background": "TigerGraph is a graph database as a service company. My role mainly involved creating graph queries, graph schema, loading jobs for data, and debugging customer issues.",
   "points": [
-    "Enhanced TigerGraph's graph algorithm library to support schema-less queries and wrote nearly 12 unit tests for each algorithm.",
+    "Enhanced TigerGraph’s graph algorithm library to support schema-less data and wrote 12 unit tests for each algorithm.",
     "Wrote efficient graph queries that extracted insights in millions of vertices and edges in under 400 milliseconds.",
-    "Designed robust graph database schema for rapid indexing on vertices and for fast query performance for Fortune 500 clients.",
-    "Worked on building graph database use cases such as customer tracking, and entity resolution for client pocs."
+    "Designed robust graph database schema for rapid indexing on vertices, decreasing query speed by 50%.",
+    "Collaborated with clients across the world to build proof of concept graph solutions for F500 corporations."
   ]
   },
   {
@@ -34,10 +45,10 @@ experience = [
     "to": "Jul. 2020",
     "background": "I worked on a platform called OrgX which essentially connects users, projects, events and organizations with a graph database. I worked in a team of three with a project manager and another engineer.",
     "points": [
-      "Built a web application to allow seamless collaboration on an organizational level with React.js, Node.js, Firestore and TigerGraph in 6 months as a full stack intern.",
-     "Architected a scalable messaging system using Firestore and its real time data snapshot listeners.",
-     "Optimized database reads to 1 read on chat page enter by storing the 50 most recent messages on the chat document as metadata.",
-     "Constructed a secure Express.js proxy to handle client communication to TigerGraph, and the chat, notification and feed service."
+      "Built an api with Node and Express to handle client requests to core services, lessening application vulnerabilities.",
+     "Architected a scalable chat service using Firestore’s real time snapshot listeners, providing sub 50 ms updates to users.",
+     "Achieved 90% code coverage on OrgX web application using Jest and Enzyme to unit test React components and logic.",
+     "Incorporated aggregator fields on Post vertices for like and comment count, speeding up feed queries on graph by 4x."
     ]
   }]
 

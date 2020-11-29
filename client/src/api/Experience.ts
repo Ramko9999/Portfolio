@@ -11,7 +11,7 @@ class ExperienceApi {
                 throw Error("Failed to get experience");
             }
             let json = await response.json();
-            return json;
+            return json.experience;
         }
         catch(error){
             throw Error(error.message);
