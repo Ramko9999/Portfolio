@@ -1,7 +1,5 @@
 import Chart from "react-google-charts";
 
-
-
 type props = {
     data: any[]
 }

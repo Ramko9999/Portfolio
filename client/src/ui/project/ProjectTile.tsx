@@ -90,12 +90,12 @@ const ProjectText = (props: Props) => {
     <div className="text">
       <div>
         <Space direction="vertical" size="middle">
-          {description.split(".").map((sen: string) => {
+          {description.split(".").map((sen: string, index: number) => {
             let txt = sen.trim();
             if (txt.length > 0) {
               txt += ".";
             }
-            return <span>{txt}</span>
+            return <span key={index}>{txt}</span>
           })}
         </Space>
       </div>
