@@ -90,6 +90,8 @@ def on_read():
         db.session.commit()
         return {"error": False}, 200
     except Exception as e:
+        print("Read error:")
+        print(str(e))
         return {"error": True, "message":str(e)}, 500
 
 
@@ -137,7 +139,7 @@ def on_get_data():
                 }
                 projects.append(project)
 
-        ip = request.remote_addr
+        client_ip = request.remote_addr
 
         day_id = get_current_id()
         results = Day.query.filter_by(id=day_id)
@@ -148,17 +150,19 @@ def on_get_data():
             day = results.first()
             day.views += 1
 
-        ip_views = IpView.query.filter_by(date_id=day_id, ip=ip)
-        if ip_views.count() == 0:
-            ip_view = IpView(ip, day_id)
+        ip_count = IpView.query.filter_by(ip=client_ip, date_id=day_id).count()
+        if ip_count == 0:
+            ip_view = IpView(client_ip, day_id)
             db.session.add(ip_view)
 
         db.session.commit()
+        
         return {"projects": projects, 
                 "experiences": experience,
                 "error": False}
 
     except Exception as e:
+        print(str(e))
         return {"error": True, "message": str(e)}, 500
 
 

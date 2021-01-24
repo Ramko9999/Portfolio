@@ -17,6 +17,7 @@ const MainLayout = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    let timeout: NodeJS.Timeout | null = null;
     DataApi.getData().then((data) => {
       if (data.error) {
         setIsError(true);
@@ -25,21 +26,22 @@ const MainLayout = () => {
         const { projects, experiences } = data;
         setProjectData(projects);
         setExpData(experiences);
+        timeout = setTimeout(() => {
+          UsageApi.markRead().then(() => {
+            console.log("Marked!");
+          });
+        }, 10000);
       }
     }).catch((r) => {
       setIsError(true);
     }).finally(() => {
       setIsLoading(false);
     });
-
-    let timeout = setTimeout(() => {
-      UsageApi.markRead().then(() => {
-        console.log("Marked!");
-      });
-    }, 10000);
-
+    
     return () => {
-      clearTimeout(timeout);
+      if(timeout !== null){
+        clearTimeout(timeout);
+      }
     }
   }, []);
 
