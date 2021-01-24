@@ -59,8 +59,11 @@ const Dashboard = () => {
 
     const [data, setData] = useState<Day[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [start, setStart] = useState<Date>({ month: "January", day: 20, year: 2021 });
-    const [end, setEnd] = useState<Date>({ month: "January", day: 23, year: 2021 });
+
+    const currentDay = new globalThis.Date();
+    const [end, setEnd] = useState<Date>({ month: months[currentDay.getMonth()], day: currentDay.getDate(), year: currentDay.getFullYear()});
+    currentDay.setMonth(currentDay.getMonth() - 1);
+    const [start, setStart] = useState<Date>({month: months[currentDay.getMonth()], day: currentDay.getDate(), year: currentDay.getFullYear()});
 
     useEffect(() => {
         UsageApi.getUsage(start, end).then((days) => {
