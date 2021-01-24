@@ -11,7 +11,7 @@ const Graph = ({data}: props) => {
         height={"500px"}
         width={"100%"}
         data={data}
-      />)
+       />);
 };
 
 export default Graph;

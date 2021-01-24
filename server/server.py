@@ -180,7 +180,7 @@ def get_analytics():
         days = []
         for result in results:
             days.append({
-                "day_id": result[0],
+                "day_id": str(result[0]),
                 "views": result[1],
                 "reads": result[2],
                 "viewers": result[3]

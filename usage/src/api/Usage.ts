@@ -4,25 +4,7 @@ import {Day, Date} from "../Types";
 
 class UsageApi{
 
-    static async getMockUsage(start:Date, end:Date, onError:(e:string) => void){
-
-        let output:Day[] = [];
-        for(let i = 1; i < 32; i++){
-            let views = Math.ceil(Math.random() * 100);
-            let reads = Math.ceil(Math.random() * views);
-            let viewers = Math.ceil(Math.random() * views);;
-            output.push({
-                day_id:"Jan. " + i,
-                views: views,
-                reads: reads,
-                viewers: viewers
-            });
-        }
-       
-        return output;
-    }
-
-    static async getUsage(start:Date, end:Date, onError:(e:string) => void) {
+    static async getUsage(start:Date, end:Date) {
         const ep = CONFIG.URL + "/analytics";
         try{
             const response = await fetch(ep, 
@@ -45,7 +27,7 @@ class UsageApi{
             return days;
         }
         catch(error){   
-            onError(error.message);
+            throw Error(error.message);
         }
     };
 }
