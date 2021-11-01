@@ -1,0 +1,6 @@
+@import "../Main.css";
+
+.icon{
+    width: calc(2em + 0.5vw);
+    height: calc(2em + 0.5vw);
+}
