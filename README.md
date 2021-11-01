@@ -2,6 +2,8 @@
 
 This is the source code of my portfolio. It is built in React and Typescript and I also made a Python Flask server to fetch my updated Github repository information to populate the projects section of my portfolio.
 
+Link to the portfolio: [Portfolio](https://ramki-pitch.web.app/)
+
 I initially made this portfolio in Flutter Web, but moved to React after learning it.
 
 ## 3 sources of inspiration!
