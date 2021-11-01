@@ -23,8 +23,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "set REACT_APP_URL=dev&& react-scripts start",
+    "build": "set REACT_APP_URL=prod&& react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
