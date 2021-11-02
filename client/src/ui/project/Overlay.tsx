@@ -24,23 +24,15 @@ const ProjectOverlay = ({ description, name, topics, url }: Project) => {
     return (
 
         <div className="project-overlay">
-            <div className="strong-font" style={{color: "white"}}>
+            <div className="strong-font clickable" 
+                style={{color: "white", textDecoration: "underline"}}
+                onClick={() => window.open(url)}>
                 {name}
             </div>
             <div>
                 <Space direction="vertical" size="middle">
                     {getBullets()}
                 </Space>
-            </div>
-            <div onClick={() => { window.open(url) }}
-                className="clickable light-font" style={
-                    {
-                        marginTop: "5%",
-                        textDecoration: "underline",
-                        color: "white"
-                    }
-                }>
-                View Source Code
             </div>
             <div style={{
                 marginTop: "1%"

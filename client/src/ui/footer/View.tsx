@@ -22,7 +22,7 @@ const FooterView = () => {
                         display: "inline-block"
                     }
                 }>
-                    Wanna see the code?
+                    Wanna see the code for this website?
                 </div>
                 <div className="clickable" style={
                     {
