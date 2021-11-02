@@ -18,7 +18,6 @@ const MainLayout = () => {
   const [workData, setWorkData] = useState<Experience[]>([]);
   const [educationData, setEducationData] = useState<Experience[]>([]);
   const [projectData, setProjectData] = useState<Project[]>([]);
-  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     DataApi.getData().then((data) => {
@@ -30,11 +29,10 @@ const MainLayout = () => {
         setProjectData(projects);
         setWorkData(work);
         setEducationData(education);
+        setRequestStatus(RequestStatus.SUCCESS);
       }
     }).catch((r) => {
       setRequestStatus(RequestStatus.ERROR);
-    }).finally(() => {
-      setRequestStatus(RequestStatus.SUCCESS);
     });
 
     return () => { }
@@ -49,7 +47,7 @@ const MainLayout = () => {
             Sorry! Couldn't fetch the portfolio data at this time.
           </div>
         </div>
-      </div>)
+      </div>);
   }
 
   if (requestStatus === RequestStatus.LOADING) {
@@ -58,7 +56,7 @@ const MainLayout = () => {
         <div style={{ marginTop: "17%", textAlign: "center" }}>
           <Loader />
         </div>
-      </div>)
+      </div>);
   }
 
   return (
