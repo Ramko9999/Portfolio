@@ -1,4 +1,3 @@
-
 education = [
     {
         "name": "University of Minnesota Twin Cities",
@@ -10,9 +9,9 @@ education = [
         "points": [
             "Pursuing a Bachelor's of Science in Computer Science",
             "Notable Coursework: Algorithms & Data Structures, OS, Introduction to ML, and Software Design and Development",
-            "Attempting to utilize the nice gym on campus"
+            "Attempting to utilize the nice gym on campus",
         ],
-        "location": "Minneapolis, Minnesota"
+        "location": "Minneapolis, Minnesota",
     },
     {
         "name": "Normandale College",
@@ -22,7 +21,6 @@ education = [
         "to": "May 2020",
         "background": "",
         "location": "Bloomington, Minnesota",
-        "points": [
-            "Enrolled in various coursework for dual-enrollment"
-        ]
-    }]
+        "points": ["Enrolled in various coursework for dual-enrollment"],
+    },
+]

@@ -5,19 +5,21 @@ from flask_cors import CORS
 from education import education
 from work import work
 from dotenv import load_dotenv
-from logging import getLogger
 
 load_dotenv()
-USERNAME = os.environ["USERNAME"]
 TOKEN = os.environ["TOKEN"]
 
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route("/data", methods=["GET"])
 def get_data():
     url = f"https://api.github.com/users/Ramko9999/repos"
-    headers = {"Accept": "application/vnd.github+json", "Authorization": f"Bearer {TOKEN}"}
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {TOKEN}",
+    }
     params = {"sort": "pushed", "direction": "asc", "type": "owner"}
     repos = requests.get(url, headers=headers, params=params).json()
     projects = []
@@ -29,13 +31,12 @@ def get_data():
                 "url": repo["html_url"],
                 "description": repo["description"],
                 "topics": repo["topics"],
-                "image": repo["homepage"]
+                "image": repo["homepage"],
             }
             projects.append(project)
 
-    return {"projects": projects,
-            "work": work,
-            "education": education}
+    return {"projects": projects, "work": work, "education": education}
+
 
 if __name__ == "__main__":
     app.run()
