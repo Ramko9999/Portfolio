@@ -16,7 +16,7 @@ work = [
     },
     {
         "name": "Robinhood",
-        "logo": "https://descargar.org/wp-content/uploads/2017/04/robinhood-iphone-logo.jpg",
+        "logo": "https://www.financialadvisortransitions.com/uploads/news/1592854430-robinhood_logo.jpg",
         "position": "Software Engineering Intern (Customer Care)",
         "from": "Jan. 2022",
         "to": "May 2022",

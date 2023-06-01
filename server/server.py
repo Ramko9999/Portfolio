@@ -20,7 +20,7 @@ def get_data():
         "Accept": "application/vnd.github+json",
         "Authorization": f"Bearer {TOKEN}",
     }
-    params = {"sort": "pushed", "direction": "asc", "type": "owner"}
+    params = {"sort": "pushed", "direction": "desc", "type": "owner"}
     repos = requests.get(url, headers=headers, params=params).json()
     projects = []
     for repo in repos:
