@@ -1,6 +1,4 @@
-config.py
-test.py
 venv/
-test/
 __pycache__/
 /.idea
+*.env
