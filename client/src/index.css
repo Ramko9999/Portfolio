@@ -15,7 +15,7 @@ code {
 :root {
   --item-title-size: calc(1rem + 0.8vw);
   --item-subtitle-size: calc(0.7rem + 0.8vw);
-  --item-text-size: calc(0.6rem + 0.4vw);
+  --item-text-size: calc(0.8rem + 0.4vw);
 }
 
 .clickable:hover {
