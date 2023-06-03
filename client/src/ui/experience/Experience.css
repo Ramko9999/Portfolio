@@ -1,19 +1,45 @@
-@import "../Main.css";
-
-.experience-header:hover{
-    cursor: pointer;
+.experience-heading {
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5vh;
 }
 
-.experience-tile{
-    border: 1px solid #f06;
-    border-radius: 5px;
-    background: white;
-    min-height: 85px;
-    color: black;
+.experience:hover {
+  cursor: pointer;
 }
 
-.logo{
-    border-radius: 50%;
-    width: calc(2.5em + 0.5vw);
-    height: calc(2.5em + 0.5vw);
+.experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-title {
+  font-size: var(--item-title-size);
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: var(--item-subtitle-size);
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  font-family: "Roboto Mono";
+  padding: 0.5rem;
+  gap: 0.5vh;
+  font-size: var(--item-text-size);
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
 }

@@ -1,26 +1,24 @@
 education = [
     {
-        "name": "University of Minnesota Twin Cities",
-        "logo": "https://media.glassdoor.com/sqll/498739/university-of-minnesota-duluth-squarelogo-1424347899660.png",
-        "position": "Computer Science Student",
-        "from": "Sept. 2019",
-        "to": "May. 2023",
-        "background": "",
-        "points": [
-            "Pursuing a Bachelor's of Science in Computer Science",
-            "Notable Coursework: Algorithms & Data Structures, OS, Introduction to ML, and Software Design and Development",
-            "Attempting to utilize the nice gym on campus",
-        ],
-        "location": "Minneapolis, Minnesota",
+        "name": "University of Minnesota",
+        "degree": "Computer Science",
+        "from": "9/2019",
+        "to": "5/2023",
+        "display": {
+            "background": "#7b233b",
+            "text": "#f3c33b",
+            "font": "Pinnacle"
+        }
     },
     {
-        "name": "Normandale College",
-        "logo": "https://cdn-payscale.com/content/school_logos/Normandale%20Community%20College_200px.png",
-        "position": "PSEO Student",
-        "from": "Aug. 2018",
-        "to": "May 2020",
-        "background": "",
-        "location": "Bloomington, Minnesota",
-        "points": ["Enrolled in various coursework for dual-enrollment"],
+        "name": "normandale college",
+        "degree": "dual enrollment",
+        "from": "8/2018",
+        "to": "5/2020",
+        "display": {
+            "background": "white",
+            "text": "black",
+            "font": "Forum"
+        }
     },
 ]
